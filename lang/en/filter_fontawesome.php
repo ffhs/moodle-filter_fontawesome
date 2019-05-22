@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Language strings for filter_fontawesome.
  *
- * @package    filter
- * @subpackage fontawesome
+ * @package    filter_fontawesome
  * @copyright  2013 Julian Ridden <julian@moodleman.net>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

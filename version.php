@@ -15,19 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Config for filter_fontawesome
+ * Config for filter_fontawesome.
  *
- * @package    filter
- * @subpackage fontawesome
+ * @package    filter_fontawesome
  * @copyright  2013-2016 Julian Ridden <julian@moodleman.net>
- * @author      2019 Adrian Perez, Fernfachhochschule Schweiz (FFHS) <adrian.perez@ffhs.ch>
+ * @author     2019 Adrian Perez, Fernfachhochschule Schweiz (FFHS) <adrian.perez@ffhs.ch>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019022701;
+$plugin->version   = 2019022702;
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '4.8.4 (Build: 201900405)';
+$plugin->release = '4.8.5';
 $plugin->requires  = 2018051700;
 $plugin->component = 'filter_fontawesome';
