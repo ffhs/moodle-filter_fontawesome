@@ -28,7 +28,6 @@ defined('MOODLE_INTERNAL') || die();
 global $CFG;
 require_once($CFG->dirroot . '/filter/fontawesome/filter.php');
 
-
 /**
  * Unit tests for filter_fontawesome.
  *
@@ -40,6 +39,7 @@ require_once($CFG->dirroot . '/filter/fontawesome/filter.php');
  */
 class filter_fontawesome_testcase extends advanced_testcase {
 
+    /** @var object $filter contains the instance */
     protected $filter;
 
     protected function setUp() {
@@ -48,6 +48,12 @@ class filter_fontawesome_testcase extends advanced_testcase {
         $this->filter = new filter_fontawesome(context_system::instance(), array());
     }
 
+    /**
+     * Translate the text for a single fontawesome icon into the rendered value.
+     *
+     * @param string $content contains the fontawesome icon class
+     * @param bool $filtershouldrun does this run must success or not
+     */
     public function run_with_content($content, $filtershouldrun) {
         $pre = 'Some pre text';
         $post = 'Some post text';

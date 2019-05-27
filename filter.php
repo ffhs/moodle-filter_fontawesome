@@ -28,6 +28,9 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Fontawesome icons filter class.
  *
+ * @copyright  2013 Julian Ridden <julian@moodleman.net>
+ * @author     2019 Adrian Perez, Fernfachhochschule Schweiz (FFHS) <adrian.perez@ffhs.ch>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class filter_fontawesome extends moodle_text_filter {
 
