@@ -1,4 +1,4 @@
-# Moodle FontAwesome Filter [![Build Status](https://travis-ci.org/adpe/moodle-filter_fontawesome.svg?branch=master)](https://travis-ci.org/adpe/moodle-filter_fontawesome)
+# Moodle FontAwesome Filter [![Build Status](https://travis-ci.org/ffhs/moodle-filter_fontawesome.svg?branch=master)](https://travis-ci.org/ffhs/moodle-filter_fontawesome)
 
 ## Introduction
 This filter allows you to use fontawesome icons in the Moodle text editor without worrying about having your div's stripped out by the Moodle Atto/TinyMCE HTML cleaner. 
