@@ -80,6 +80,10 @@ class filter_fontawesome_testcase extends advanced_testcase {
         $this->run_with_content('icon fa-check fa-4x', true);
         $this->run_with_content('fab fa-telegram', true);
         $this->run_with_content('fab fa-telegram fa-5x', true);
+        $this->run_with_content('fad fa-angel', true);
+        $this->run_with_content('fal fa-child fa-2x', true);
+        $this->run_with_content('fas fa-smile', true);
+        $this->run_with_content('far fa-book', true);
         // Now test some cases that shouldn't be executed.
         $this->run_with_content('Some text fa-check', false);
         $this->run_with_content('fas-check', false);
@@ -89,5 +93,6 @@ class filter_fontawesome_testcase extends advanced_testcase {
         $this->run_with_content('f-check', false);
         $this->run_with_content('fa-check onmouseover="alert(1)"', false);
         $this->run_with_content('fa-check" onmouseover="alert(1)""', false);
+        $this->run_with_content('fad-angel', false);
     }
 }
