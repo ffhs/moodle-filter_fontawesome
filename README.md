@@ -3,7 +3,9 @@
 ## Introduction
 This filter allows you to use fontawesome icons in the Moodle text editor without worrying about having your div's stripped out by the Moodle Atto/TinyMCE HTML cleaner. 
 
-> Furthermore it's `important` to know, that this plugin doesn't supply the [free FontAwesome icon set](https://fontawesome.com/free).  This is the responsibility of Moodle or your theme developer. So it can be, that not all FA icons will be displayed, for more information consult these links:
+> This plugin supports the legacy **FontAwesome 4** icon set and the newer **version 5**.
+>
+>Furthermore it's `important` to know, that this plugin doesn't supply the newer [free FontAwesome 5 icon set](https://fontawesome.com/free).  This is the responsibility of Moodle or your theme developer. So it can be, that not all FA icons will be displayed, for more information consult these links:
 > - [Latest Release](https://fontawesome.com/changelog/latest)
 > - [Details of all changes](https://github.com/FortAwesome/Font-Awesome/blob/master/CHANGELOG.md)
 
@@ -56,4 +58,5 @@ Some examples and guide to start:
 * Written by Julian (@moodleman) Ridden. Visit the blog at http://www.moodleman.net
 * Updated by David Bezemer. Visit his company page at http://www.uplearning.nl
 * Updated to FontAwesome version 4.7 by Usman Asar
-* Keep up-to-date by [Adrian Perez Rodriguez](https://github.com/adpe)
+* Updated to FontAwesome version 5 by Adrian Perez Rodriguez
+* Keep up-to-date by [FFHS (Fernfachhochschule Schweiz)](https://github.com/ffhs)
