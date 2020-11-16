@@ -42,7 +42,7 @@ class filter_fontawesome_testcase extends advanced_testcase {
     /** @var object $filter contains the instance */
     protected $filter;
 
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
         $this->resetAfterTest(true);
         $this->filter = new filter_fontawesome(context_system::instance(), array());

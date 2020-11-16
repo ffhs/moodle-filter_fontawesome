@@ -13,11 +13,6 @@ cache:
     - $HOME/.composer/cache
     - $HOME/.npm
 
-php:
-  - 7.2
-  - 7.3
-  - 7.4
-
 env:
   global:
     - PHPUNIT_IGNORE_PATHS=classes/privacy
