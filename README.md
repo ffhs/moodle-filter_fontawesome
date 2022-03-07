@@ -1,4 +1,4 @@
-# Moodle FontAwesome Filter [![Build Status](https://travis-ci.com/ffhs/moodle-filter_fontawesome.svg?branch=MOODLE_39_STABLE)](https://travis-ci.com/ffhs/moodle-filter_fontawesome) [![Coverage Status](https://coveralls.io/repos/github/ffhs/moodle-filter_fontawesome/badge.svg?branch=MOODLE_39_STABLE)](https://coveralls.io/github/ffhs/moodle-filter_fontawesome?branch=MOODLE_39_STABLE)
+# Moodle FontAwesome Filter ![Moodle Plugin CI](https://github.com/ffhs/moodle-filter-fontawesome/workflows/Moodle%20Plugin%20CI/badge.svg?branch=MOODLE_39_STABLE) [![Coverage Status](https://coveralls.io/repos/github/ffhs/moodle-filter_fontawesome/badge.svg?branch=MOODLE_39_STABLE)](https://coveralls.io/github/ffhs/moodle-filter_fontawesome/badge.svg?branch=MOODLE_39_STABLE)
 
 ## Introduction
 This filter allows you to use fontawesome icons in the Moodle text editor without worrying about having your div's stripped out by the Moodle Atto/TinyMCE HTML cleaner. 
@@ -19,7 +19,7 @@ Install the plugin like any other plugin to folder `filter/fontawesome`
 Use git to install this plugin: 
 ```bash
 cd /var/www/html/moodle
-git clone https://github.com/adpe/moodle-filter_fontawesome.git filter/fontawesome
+git clone https://github.com/ffhs/moodle-filter_fontawesome.git filter/fontawesome
 ```
 
 Then complete upgrade over CLI:
