@@ -13,7 +13,7 @@ Install the plugin like any other plugin to folder `filter/fontawesome`
 Use git to install this plugin: 
 ```bash
 cd /var/www/html/moodle
-git clone https://github.com/adpe/moodle-filter_fontawesome.git filter/fontawesome
+git clone https://github.com/ffhs/moodle-filter_fontawesome.git filter/fontawesome
 ```
 
 Then complete upgrade over CLI:
