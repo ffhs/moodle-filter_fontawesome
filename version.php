@@ -26,8 +26,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2024100900;
+$plugin->version = 2025060200;
 $plugin->requires = 2021051700;
 $plugin->component = 'filter_fontawesome';
-$plugin->release = 'v4.5-r1';
+$plugin->release = 'v5.0-r1';
 $plugin->maturity = MATURITY_STABLE;
