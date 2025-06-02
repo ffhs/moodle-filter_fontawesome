@@ -10,7 +10,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:13
+        image: postgres:14
         env:
           POSTGRES_USER: 'postgres'
           POSTGRES_HOST_AUTH_METHOD: 'trust'
@@ -31,22 +31,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['8.0','8.1','8.2','8.3']
-        moodle-branch: ['MOODLE_402_STABLE', 'MOODLE_403_STABLE', 'MOODLE_404_STABLE', 'MOODLE_405_STABLE']
+        php: ['8.2','8.3']
+        moodle-branch: ['MOODLE_401_STABLE', 'MOODLE_404_STABLE', 'MOODLE_405_STABLE', 'MOODLE_500_STABLE']
         database: [pgsql, mariadb]
         exclude:
-          # Moodle 4.5 doesn't support PHP 8.0, so exclude this combination.
-          - moodle-branch: 'MOODLE_405_STABLE'
-            php: '8.0'
-          # Moodle 4.4 doesn't support PHP 8.0, so exclude this combination.
-          - moodle-branch: 'MOODLE_404_STABLE'
-            php: '8.0'
-          # Moodle 4.3 doesn't support PHP 8.3, so exclude this combination.
-          - moodle-branch: 'MOODLE_403_STABLE'
-            php: '8.3'
-          # Moodle 4.2 doesn't support PHP 8.3, so exclude this combination.
-          - moodle-branch: 'MOODLE_402_STABLE'
-            php: '8.3'
           # Moodle 4.1 doesn't support PHP 8.3, so exclude this combination.
           - moodle-branch: 'MOODLE_401_STABLE'
             php: '8.3'
@@ -130,7 +118,7 @@ jobs:
         continue-on-error: true # This step will show errors but will not fail
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-        if: ${{ matrix.php == '8.2' && matrix.moodle-branch == 'MOODLE_404_STABLE' && matrix.database == 'mariadb'}}
+        if: ${{ matrix.php == '8.3' && matrix.moodle-branch == 'MOODLE_500_STABLE' && matrix.database == 'mariadb'}}
         run: moodle-plugin-ci coveralls-upload
 
       - name: Mark cancelled jobs as failed.
