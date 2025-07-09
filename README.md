@@ -1,4 +1,4 @@
-# Moodle FontAwesome Filter ![Moodle Plugin CI](https://github.com/ffhs/moodle-filter_fontawesome/workflows/Moodle%20Plugin%20CI/badge.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/ffhs/moodle-filter_fontawesome/badge.svg?branch=master)](https://coveralls.io/github/ffhs/moodle-filter_fontawesome?branch=master)
+# Moodle FontAwesome Filter [![Moodle Plugin CI](https://github.com/ffhs/moodle-filter_fontawesome/actions/workflows/moodle-ci.yml/badge.svg)](https://github.com/ffhs/moodle-filter_fontawesome/actions/workflows/moodle-ci.yml) [![Coverage Status](https://coveralls.io/repos/github/ffhs/moodle-filter_fontawesome/badge.svg?branch=master)](https://coveralls.io/github/ffhs/moodle-filter_fontawesome?branch=master)
 
 ## Introduction
 
@@ -55,8 +55,11 @@ Some examples and guide to start:
 * If you wish to rotate the icon you can specify how many degrees clockwise. e.g.: `[fa-camera-retro fa-rotate-90]`
 * You can also flip an icon horizontally or vertically. e.g.: `[fa-camera-retro fa-flip-horizontal]` or `[fa-camera-retro fa-flip-vertical]`
 * You can mute the colour to a dull grey. e.g.: `[fa-camera-retro fa-muted]`
-* You can "pull" the icon to the left or right. If it is "pulled" to the left text will wrap to the right. e.g.: `[fa-camera-retro pull-left]`
-* All the settings above can be mixed and matched e.g.: `[fa-quote-left fa-4x pull-left fa-muted]`
+* You can "pull" the icon to the left or right. If it is "pulled" to the left text will wrap to the right. e.g.: `[fa-camera-retro pull-left]`.
+  Use float-left or float-right when using Bootstrap 5 (Moodle 5+).
+* Add an icon class. e.g.: `[icon fa-world]`
+* All the settings above can be mixed and matched e.g.: `[fa-quote-left fa-4x float-left fa-muted]`
+* Styles can be added from FontAwesome v5: `[fa-solid fa-world]`
 * If some text parts should not be replaced, use `<nolink>` or `<span class="nolink">` e.g.: `[fa-world] <span class="nolink">[fa-world]</span>`
 
 ## Further information
