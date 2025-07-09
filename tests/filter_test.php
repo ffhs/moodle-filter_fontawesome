@@ -106,38 +106,74 @@ final class filter_test extends \advanced_testcase {
      */
     public static function fontawesome_testcases(): array {
         return [
-                'Filter an icon in a text' => [
-                        'Hello [fa-world] world',
-                        'Hello <i class="fa fa-world" aria-hidden="true"></i> world',
-                ],
-                'No filter in <nolink> tag' => [
-                        'Hello <nolink>[fa-world]</nolink> world, hello <nolink>[fa-star] stars</nolink>',
-                        'Hello <nolink>[fa-world]</nolink> world, hello <nolink>[fa-star] stars</nolink>',
-                ],
-                'No filter in nolink span tag' => [
-                        'Hello <span class="nolink">[fa-world]</span> world',
-                        'Hello <span class="nolink">[fa-world]</span> world',
-                ],
-                'No filter in extended nolink span tag' => [
-                        'Hello <span id="test" class="anotherclass1 nolink anotherclass2">[fa-world]</span> world',
-                        'Hello <span id="test" class="anotherclass1 nolink anotherclass2">[fa-world]</span> world',
-                ],
-                'No filter in whole text' => [
-                        '<nolink>Hello [fa-world] world</nolink>',
-                        '<nolink>Hello [fa-world] world</nolink>',
-                ],
-                'Mix filter and no filter' => [
-                        'Hello [fa-world],
-                        hello <span class="nolink">[fa-sun]</span>, hello <nolink>[fa-star]</nolink> stars',
-                        'Hello <i class="fa fa-world" aria-hidden="true"></i>,
-                        hello <span class="nolink">[fa-sun]</span>, hello <nolink>[fa-star]</nolink> stars',
-                ],
-                'Nest nolink tags and span tags' => [
-                        'Hello [fa-world],
-                        hello <span class="nolink">[fa-sun], hello <nolink>[fa-star]</nolink> stars</span>',
-                        'Hello <i class="fa fa-world" aria-hidden="true"></i>,
-                        hello <span class="nolink">[fa-sun], hello <nolink>[fa-star]</nolink> stars</span>',
-                ],
+            'Filter an icon in a text' => [
+                'Hello [fa-world] world',
+                'Hello <i class="fa fa-world" aria-hidden="true"></i> world',
+            ],
+            'Filter an icon with fa prefix' => [
+                'Hello [fa fa-world] world',
+                'Hello <i class="fa fa-world" aria-hidden="true"></i> world',
+            ],
+            'Filter an icon with short version of solid style' => [
+                'Hello [fas fa-world] world',
+                'Hello <i class="fas fa-world" aria-hidden="true"></i> world',
+            ],
+            'Filter an icon with solid style' => [
+                'Hello [fa-solid fa-world] world',
+                'Hello <i class="fa-solid fa-world" aria-hidden="true"></i> world',
+            ],
+            'Filter an icon, suffixed with regular style' => [
+                'Hello [fa-world fa-regular] world',
+                'Hello <i class="fa-world fa-regular" aria-hidden="true"></i> world',
+            ],
+            'Filter an icon with redundant spaces' => [
+                'Hello [fa-solid  fa-world] world',
+                'Hello <i class="fa-solid fa-world" aria-hidden="true"></i> world',
+            ],
+            'Filter an icon with icon class' => [
+                'Hello [icon fa-world] world',
+                'Hello <i class="icon fa fa-world" aria-hidden="true"></i> world',
+            ],
+            'Filter an icon with fa and icon class' => [
+                'Hello [icon fa fa-world] world',
+                'Hello <i class="icon fa fa-world" aria-hidden="true"></i> world',
+            ],
+            'Filter an icon with short style and icon class' => [
+                'Hello [icon fas fa-world] world',
+                'Hello <i class="icon fas fa-world" aria-hidden="true"></i> world',
+            ],
+            'Filter an icon with long style and icon class' => [
+                'Hello [icon fa-solid fa-world] world',
+                'Hello <i class="icon fa-solid fa-world" aria-hidden="true"></i> world',
+            ],
+            'No filter in <nolink> tag' => [
+                'Hello <nolink>[fa-world]</nolink> world, hello <nolink>[fa-star] stars</nolink>',
+                'Hello <nolink>[fa-world]</nolink> world, hello <nolink>[fa-star] stars</nolink>',
+            ],
+            'No filter in nolink span tag' => [
+                'Hello <span class="nolink">[fa-world]</span> world',
+                'Hello <span class="nolink">[fa-world]</span> world',
+            ],
+            'No filter in extended nolink span tag' => [
+                'Hello <span id="test" class="anotherclass1 nolink anotherclass2">[fa-world]</span> world',
+                'Hello <span id="test" class="anotherclass1 nolink anotherclass2">[fa-world]</span> world',
+            ],
+            'No filter in whole text' => [
+                '<nolink>Hello [fa-world] world</nolink>',
+                '<nolink>Hello [fa-world] world</nolink>',
+            ],
+            'Mix filter and no filter' => [
+                'Hello [fa-world],
+                hello <span class="nolink">[fa-sun]</span>, hello <nolink>[fa-star]</nolink> stars',
+                'Hello <i class="fa fa-world" aria-hidden="true"></i>,
+                hello <span class="nolink">[fa-sun]</span>, hello <nolink>[fa-star]</nolink> stars',
+            ],
+            'Nest nolink tags and span tags' => [
+                'Hello [fa-world],
+                hello <span class="nolink">[fa-sun], hello <nolink>[fa-star]</nolink> stars</span>',
+                'Hello <i class="fa fa-world" aria-hidden="true"></i>,
+                hello <span class="nolink">[fa-sun], hello <nolink>[fa-star]</nolink> stars</span>',
+            ],
         ];
     }
 
@@ -152,6 +188,6 @@ final class filter_test extends \advanced_testcase {
      */
     public function test_filter_fontawesome(string $text, string $expected): void {
         $result = $this->filter->filter($text);
-        $this->assertEquals($result, $expected);
+        $this->assertEquals($expected, $result);
     }
 }

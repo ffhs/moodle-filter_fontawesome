@@ -69,7 +69,7 @@ class text_filter extends \fontawesome_base_text_filter {
         filter_save_ignore_tags($text, $filterignoretagsopen, $filterignoretagsclose, $ignoretags);
 
         // We should search only for reference to FontAwesome icons and if optional icon and fab classes are set.
-        $search = '(\[((?:icon\s)?)((?:fa[a-z]\s)?)(fa-[a-z0-9 -]+)\])is';
+        $search = '(\[((?:icon\s+)?)((?:fa[a-z]*\s+)?)(fa-[a-z0-9 -]+)\])is';
         $result = preg_replace_callback($search, [$this, 'filter_fontawesome_callback'], $text);
 
         // Put back extracted parts.
@@ -88,12 +88,47 @@ class text_filter extends \fontawesome_base_text_filter {
      * @return string $embed the modified result
      */
     private function filter_fontawesome_callback(array $matches): string {
-        if (!empty($matches[2])) {
-            $embed = '<i class="' . $matches[1] . $matches[2] . $matches[3] . '" aria-hidden="true"></i>';
-        } else {
-            $embed = '<i class="' . trim($matches[1] . ' fa ' . $matches[3]) . '" aria-hidden="true"></i>';
+
+        $addbefore = '<i class="';
+        $addafter = '" aria-hidden="true"></i>';
+
+        $hasstyleclass = false;
+
+        $classes = [];
+
+        $iconclass = trim($matches[1]);
+        if ($iconclass) {
+            $classes[] = $iconclass;
         }
 
-        return $embed;
+        $shortstyleclass = trim($matches[2]);
+        if ($shortstyleclass && $shortstyleclass != 'fa') {
+            $classes[] = $shortstyleclass;
+            $hasstyleclass = true;
+        }
+
+        $otherclasses = trim(preg_replace('/\s+/', ' ', $matches[3]));
+
+        // Remove fa.
+        $otherclasses = preg_replace('/^fa /', '', $otherclasses);
+        $otherclasses = preg_replace('/ fa /', '', $otherclasses);
+        $otherclasses = preg_replace('/ fa$/', '', $otherclasses);
+
+        $otherclassesarray = preg_split('/\s/', $otherclasses);
+        foreach ($otherclassesarray as $class) {
+            // If there are font family or style classes, no need for adding a fa class.
+            if (preg_match('/^fa-(solid|regular|light|thin|classic|duotone|sharp|sharp-duotone)$/i', $class)) {
+                $hasstyleclass = true;
+            }
+        }
+
+        // Add fa class only when no other style class exists.
+        if (!$hasstyleclass) {
+            $classes[] = 'fa';
+        }
+
+        $classes = array_merge($classes, $otherclassesarray);
+
+        return $addbefore . implode(' ', $classes) . $addafter;
     }
 }
