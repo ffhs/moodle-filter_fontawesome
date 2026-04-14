@@ -7,8 +7,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-22.04
-    env:
-      PHPUNIT_IGNORE_PATHS: 'classes/privacy'
 
     services:
       postgres:
@@ -93,7 +91,6 @@ jobs:
         run: moodle-plugin-ci phpmd
 
       - name: Moodle Code Checker
-        continue-on-error: true # This check fails on warnings (?)
         if: ${{ !cancelled() }}
         run: moodle-plugin-ci phpcs --max-warnings 0
 
@@ -102,7 +99,6 @@ jobs:
         run: moodle-plugin-ci phpdoc --max-warnings 0
 
       - name: Validating
-        continue-on-error: true # Check is deprecated. It can not find class filter_fontawesome in filter.php
         if: ${{ !cancelled() }}
         run: moodle-plugin-ci validate
 
