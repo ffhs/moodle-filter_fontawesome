@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Changed
+- Update Moodle CI workflow
 - Update code style
 
 ## [v5.0-r2] (Build: 2025090100) - 2025-09-01
