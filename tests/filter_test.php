@@ -37,7 +37,6 @@ namespace filter_fontawesome;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 final class filter_test extends \advanced_testcase {
-
     /** @var object $filter contains the instance */
     protected $filter;
 

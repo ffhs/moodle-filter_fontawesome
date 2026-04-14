@@ -41,7 +41,6 @@ if (class_exists('\core_filters\text_filter')) {
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class text_filter extends \fontawesome_base_text_filter {
-
     /**
      * Override this function to actually implement the filtering.
      *
