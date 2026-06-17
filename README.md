@@ -1,4 +1,7 @@
-# Moodle FontAwesome Filter [![Moodle Plugin CI](https://github.com/ffhs/moodle-filter_fontawesome/actions/workflows/moodle-ci.yml/badge.svg)](https://github.com/ffhs/moodle-filter_fontawesome/actions/workflows/moodle-ci.yml) [![Coverage Status](https://coveralls.io/repos/github/ffhs/moodle-filter_fontawesome/badge.svg?branch=master)](https://coveralls.io/github/ffhs/moodle-filter_fontawesome?branch=master)
+# Moodle FontAwesome Filter
+
+[![Moodle Plugin CI](https://github.com/ffhs/moodle-filter_fontawesome/actions/workflows/moodle-plugin-ci.yml/badge.svg)](https://github.com/ffhs/moodle-filter_fontawesome/actions/workflows/moodle-plugin-ci.yml) 
+[![Coverage Status](https://coveralls.io/repos/github/ffhs/moodle-filter_fontawesome/badge.svg?branch=master)](https://coveralls.io/github/ffhs/moodle-filter_fontawesome?branch=master)
 
 ## Introduction
 
